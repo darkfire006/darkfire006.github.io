@@ -270,8 +270,10 @@ function OnMouseUp(event) {
                                 RerenderLayer(LAYER_HIGHLIGHT);
                                 break;
                             }
-
                             if (info.target == "settings") { ShowConfig(); } 
+                            else if (info.target == "archipelago") {
+                                ShowArchipelago();
+                            }
                             else { ShowHelp(); }
                             current_state = STATE_DEFAULT;
                         } break;
@@ -353,9 +355,10 @@ function OnMouseUp(event) {
                                         }
     
                                         ChangeWarp(game, link_location,    link_warp,   LINKTYPE_WARP, current_location, info.target, modifier);
-                                        ChangeWarp(game, current_location, info.target, LINKTYPE_WARP, link_location,    link_warp,   modifier);
+                                        if (!html.config.decoupled_mode.checked) {
+                                            ChangeWarp(game, current_location, info.target, LINKTYPE_WARP, link_location,    link_warp,   modifier);
+                                        }
                                     }
-
                                     current_state = STATE_DEFAULT;
                                 } break;
                             }
@@ -492,7 +495,6 @@ function OnMouseUp(event) {
 // Change the warp and send info to server if connected
 function ChangeWarp(current_game, location, warp, link_type, link_location, link, modifier) {
     ChangeWarpOffline(current_game, location, warp, link_type, link_location, link, modifier);
-
     if (connected_to || connections.length > 0) {
         let text = current_game.name + "," + location + "," + warp + "," + link_type + "," + link_location + "," + link + "," + modifier;
         if (connected_to) {

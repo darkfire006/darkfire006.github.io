@@ -49,6 +49,47 @@
     <article>
       <canvas id="canvas">Your browser does not support canvas element.</canvas>
 
+      <div id="archipelago_window" class="window window_hidden">
+        <div class="config_content">
+          <span class="close" onclick="HideArchipelago()">&times;</span>
+          <div id="mainDiv">
+            <p>Connect to Archipelago for auto-tracking (requires Randomizer Mod Ver. 4.2.6 or later):</p><br/>
+            <form id="connection_details">
+              <div>
+                <label for="fname">
+                  <span class="ap-input-span">Hostname:</span>
+                  <input class="ap-input" type="text" id="archipelago_hostname" name="archipelago_hostname">
+                </label>
+                <label for="fname">
+                  <span class="ap-input-span">Port:</span>
+                  <input class="ap-input" type="password" id="archipelago_port" name="archipelago_port">
+                  <label><input type="checkbox" id="checkbox_show_port" onclick="ChangeShowPort(checked)" >Show</label>
+                </label>
+              </div>
+              <div class="ap-input-label">
+                <label for="fname"> 
+                  <span class="ap-input-span">Name:</span>
+                  <input class="ap-input" type="text" id="archipelago_player" name="archipelago_player">
+                </label>
+                <label for="fname">
+                  <span class="ap-input-span">Password:</span>
+                  <input class="ap-input" type="password" id="archipelago_password" name="archipelago_password">
+                  <label><input type="checkbox" id="checkbox_show_password" onclick="ChangeShowPassword(checked)" >Show</label>
+                </label>
+              </div>
+              <div class="submit-wrapper">
+                  <input id="submit-button" type="submit" value="Connect"><br>
+                  <div class="status-wrapper">
+                      <div id="status-connected" class="default-hidden">Connected!</div>
+                      <div id="status-failed" class="default-hidden">Connection Failed</div>
+                      <div id="status-connecting" class="default-hidden">Connecting...</div>
+                  </div>
+              </div>
+            </form>
+            <label><input type="checkbox" id="checkbox_map_switching" onclick="ChangeMapSwitching(checked)" >Automatic Map Switching</label>
+          </div>
+        </div>
+      </div>
       <div id="config_window" class="window window_hidden">
         <div class="config_content">
           <span class="close" onclick="HideConfig()">&times;</span>
@@ -56,6 +97,7 @@
             <button onclick="LoadFile()">Load</button>
             <button onclick="SaveFile()">Save</button>
             <button onclick="ResetButton()">Reset Tracker</button>
+            <label><input type="checkbox" id="checkbox_decoupled"      onclick="ChangeDecoupled(checked)"      >Decoupled Mode</label>
             <label><input type="checkbox" id="checkbox_smooth"      onclick="ChangeSmooth(checked)"      >Smooth Images</label>
             <label><input type="checkbox" id="checkbox_tooltips"    onclick="ChangeTooltips(checked)"    >Disable Tooltips</label>
             <label><input type="checkbox" id="checkbox_fittoscreen" onclick="ChangeFitToScreen(checked)" >Fit to Window</label>
@@ -86,6 +128,7 @@
       <div id="help_window" class="window window_hidden">
         <div class="config_content">
           <span class="close" onclick="HideHelp()">&times;</span>
+          <div id="help_v0"></div>
           <div id="help_v1">
             <h1>Download Links</h1>
             <li><u>Pokémon Red/Blue</u> available on <a href="https://archipelago.gg/tutorial/Pokemon%20Red%20and%20Blue/setup/en">Archipelago</a></li>
@@ -183,6 +226,15 @@
               <li>New map by KittyPBoxx: FireRed + CrystalDust + Emerald Crossover Map Randomizer.</li>
             </ul>
           </div>
+          <h1 id="update_header" class="changelog_header config_hidden">New Update!</h1>
+          <h1 id="changelog_header" class="changelog_header">Changelog</h1>
+          <div id="help_v2">
+            <h1>Version 2</h1>
+            <ul>
+              <li>Added a "Decoupled Mode" toggle that allows tracking one-way connections.</li>
+              <li>Data now persists between sessions.</li>
+            </ul>
+          </div>          
           <hr>
           <p>
 <!--            <a class="social-media" href="https://twitter.com/srcSantana">          <img class="social-media-image" src="images/_social-media/twitter-32x32.png"></a>
@@ -193,7 +245,6 @@
           </p>
         </div>
       </div>
-
     </article>
   </body>
 

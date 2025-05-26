@@ -85,6 +85,7 @@ let loading_process = {};
 let icons = {
     settings:  null,
     help:      null,
+//    archipelago: null,
     remaining: null,
     item_frame: null,
 };
@@ -94,6 +95,7 @@ function LoadImages() {
     let list = ["images/" + game.folder + "/" + game.name + ".png", "images/" + game.folder + "/frame.png"];
     if (!icons.settings)  { list.push("images/settings.png"); }
     if (!icons.help)      { list.push("images/help.png"); }
+//    if (!icons.archipelago) { list.push("images/archipelago.png"); }
     if (!icons.remaining) { list.push("images/remaining.png"); }
 
     // Check if same game has been already been loaded
@@ -191,6 +193,7 @@ function ImageLoaded() {
     else if (this.src.includes("frame.png"))      { game.frame = this; }
     else if (this.src.includes("settings.png"))   { icons.settings = this;   }
     else if (this.src.includes("help.png"))       { icons.help = this;       }
+//    else if (this.src.includes("archipelago.png")) { icons.archipelago = this; }
     else if (this.src.includes("remaining.png"))  { icons.remaining = this;  }
     else if (this.src.includes("/_marks/") || this.src.includes("/progress/")) {
         images[GetNameImage(this.src)] = this;
@@ -373,6 +376,8 @@ function RenderSettings(context) {
     };
     DrawImage(context, icons.settings, v);
     v.x = v.w + CONFIG_XOFFSET;
+//    DrawImage(context, icons.archipelago, v);
+//    v.x = v.x + v.w + CONFIG_XOFFSET;
     DrawImage(context, icons.help, v);
 }
 

@@ -212,7 +212,6 @@ function ResetTracker() {
     InitTrackerToUnknowns();
     RerenderAll();
 }
-
 function ChangeSmooth(checked) {
     localStorage.setItem(CACHE.SMOOTH_IMAGES, checked);
     RerenderLayer(LAYER_LOCATION);
@@ -223,7 +222,20 @@ function ChangeFitToScreen(checked) {
     localStorage.setItem(CACHE.FIT_TO_SCREEN, checked);
     SetCanvasDimensions();
 }
-
+function ChangeMapSwitching(checked) {
+    localStorage.setItem(CACHE.MAP_SWITCHING, checked);
+}
+function ChangeShowPort(checked) {
+    localStorage.setItem(CACHE.SHOW_PORT, checked);
+    html.archipelago.port.type = checked ? "text" : "password";
+}
+function ChangeShowPassword(checked) {
+    localStorage.setItem(CACHE.SHOW_PASSWORD, checked);
+    html.archipelago.password.type = checked ? "text" : "password";
+}
+function ChangeDecoupled(checked) {
+    localStorage.setItem(CACHE.DECOUPLED_MODE, checked);
+}
 
 function ResetColor() { ChangeLineColor(DEFAULT_COLOR); }
 function ChangeLineColor(color) {

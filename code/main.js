@@ -19,8 +19,12 @@ const CACHE = {
     LAST_VERSION:      "last-version",
     LINE_COLOR:        "line-color",
     TOOLTIPS_DISABLED: "tooltips-disabled-v2",
+    MAP_SWITCHING:     "map-switching",
+    SHOW_PORT:         "show-port",
+    SHOW_PASSWORD:     "show-password",
+    DECOUPLED_MODE:     "decoupled-mode",
 }
-const CURRENT_VERSION = 5;
+const CURRENT_VERSION = 2;
 
 let game;
 let games = {};
@@ -43,21 +47,20 @@ function init() {
     RetrieveAllHTMLElements();
     if (DEBUG.ENABLED) { RunTests(); }
 
-    // Show explanation + changelog if we haven't shown it before
     let last_version = localStorage.getItem(CACHE.LAST_VERSION);
     if (!last_version) { // New user
-        ShowHelp();
-        html.help.changelog.classList.add("config_hidden");
-        for (let i = 1; i < CURRENT_VERSION; ++i) {
+        html.help.update_header.classList.remove("config_hidden");
+        for (let i = 0; i < CURRENT_VERSION; i++) {
             html.help.versions[i].classList.add("config_hidden");
         }
+        ShowHelp();
     }
     if (last_version && last_version < CURRENT_VERSION) { // Show last changes
-        for (let i = 0; i < last_version; ++i) {
-            html.help.versions[i].classList.add("config_hidden");
-        }
-
-        ShowHelp();
+        html.help.update_header.classList.remove("config_hidden");
+       for (let i = 0; i <= last_version; i++) {
+           html.help.versions[i].classList.add("config_hidden");
+       }
+       ShowHelp();
     }
     localStorage.setItem(CACHE.LAST_VERSION, CURRENT_VERSION);
 
@@ -78,6 +81,19 @@ function init() {
         games[key_game].ready = false;
         games[key_game].obtained = new Set();
     }
+    if (localStorage.getItem("warps") != null) {
+        game.warps = JSON.parse(localStorage.getItem("warps"));
+        let count = 0;
+        for (let location in game.warps) {
+            for (let name in game.warps[location]) {
+                if (game.warps[location][name]["link"] == "unknown") {
+                    count++;
+                }
+            }
+        }
+        game.marks[0][0][1] = count;
+    }
+
     LoadImages();
     RegisterInputEvents();
     document.fonts.onloadingdone = FontReady;
@@ -104,6 +120,7 @@ const HTML_ID = {
         smooth_checkbox: "checkbox_smooth",
         tooltipsdisabled: "checkbox_tooltips",
         fit_to_screen: "checkbox_fittoscreen",
+        decoupled_mode: "checkbox_decoupled",
         loading_text: "loading_game_text",
         game_buttons: "game_buttons",
         line_color: "line_color",
@@ -122,7 +139,18 @@ const HTML_ID = {
     help: {
         window: "help_window",
         changelog: "changelog_header",
+        update_header: "update_header",
         versions: "help_v" // this is an array of size == CURRENT_VERSION
+    },
+    archipelago: {
+        window: "archipelago_window",
+        hostname: "archipelago_hostname",
+        port: "archipelago_port",
+        player: "archipelago_player",
+        password: "archipelago_password",
+        map_switching: "checkbox_map_switching",
+        show_port: "checkbox_show_port",
+        show_password: "checkbox_show_password",
     },
     canvas: "canvas", // + context
 };
@@ -132,6 +160,7 @@ function RetrieveAllHTMLElements() {
     html.config         = {};
     html.config.network = {};
     html.help           = {};
+    html.archipelago    = {};
 
     // Retrieve canvas and create auxiliar canvases
     html.canvas  = document.getElementById(HTML_ID.canvas);
@@ -144,12 +173,14 @@ function RetrieveAllHTMLElements() {
     config.loading_text     = document.getElementById(HTML_ID.config.loading_text);
     config.smooth_checkbox  = document.getElementById(HTML_ID.config.smooth_checkbox);
     config.fit_to_screen    = document.getElementById(HTML_ID.config.fit_to_screen);
+    config.decoupled_mode   = document.getElementById(HTML_ID.config.decoupled_mode);
     config.tooltipsdisabled = document.getElementById(HTML_ID.config.tooltipsdisabled);
     config.line_color       = document.getElementById(HTML_ID.config.line_color);
     config.loading_text.innerHTML = "";
     config.smooth_checkbox.checked  = (localStorage.getItem(CACHE.SMOOTH_IMAGES)     == "false") ? false : true;
-    config.fit_to_screen.checked    = (localStorage.getItem(CACHE.FIT_TO_SCREEN)     == "true")  ? true  : false;
-    config.tooltipsdisabled.checked = (localStorage.getItem(CACHE.TOOLTIPS_DISABLED) == "true")  ? true  : false;
+    config.fit_to_screen.checked    = (localStorage.getItem(CACHE.FIT_TO_SCREEN)     == "false") ? false : true;
+    config.tooltipsdisabled.checked = (localStorage.getItem(CACHE.TOOLTIPS_DISABLED) == "true") ? true : false;
+    config.decoupled_mode.checked = (localStorage.getItem(CACHE.DECOUPLED_MODE) == "true") ? true : false;
     config.line_color.value = line_color;
     
     // Retrieve networking elements
@@ -167,12 +198,32 @@ function RetrieveAllHTMLElements() {
     network.div         = document.getElementById(HTML_ID.config.network.div);
     network.toggle      = document.getElementById(HTML_ID.config.network.toggle);
 
+    
+    let ap_window = html.archipelago;
+    ap_window.window = document.getElementById(HTML_ID.archipelago.window);
+    ap_window.hostname = document.getElementById(HTML_ID.archipelago.hostname);
+    ap_window.hostname.value = localStorage.getItem("archipelago-hostname");
+    ap_window.port = document.getElementById(HTML_ID.archipelago.port);
+    ap_window.port.value = localStorage.getItem("archipelago-port");
+    ap_window.player = document.getElementById(HTML_ID.archipelago.player);
+    ap_window.player.value = localStorage.getItem("archipelago-player");
+    ap_window.password = document.getElementById(HTML_ID.archipelago.password);
+    ap_window.password.value = localStorage.getItem("archipelago-password");
+    ap_window.map_switching = document.getElementById(HTML_ID.archipelago.map_switching);
+    ap_window.map_switching.checked = (localStorage.getItem(CACHE.MAP_SWITCHING) == "false") ? false : true;
+    ap_window.show_port = document.getElementById(HTML_ID.archipelago.show_port);
+    ap_window.show_port.checked = (localStorage.getItem(CACHE.SHOW_PORT) == "true") ? true : false;
+    ap_window.show_password = document.getElementById(HTML_ID.archipelago.show_password);
+    ap_window.show_password.checked = (localStorage.getItem(CACHE.SHOW_PASSWORD) == "true") ? true : false;
+    ap_window.port.type = ap_window.show_port.checked ? "text" : "password";
+    ap_window.password.type = ap_window.show_password.checked ? "text" : "password";
     // Retrieve help window elements
     let help    = html.help;
     help.window    = document.getElementById(HTML_ID.help.window);
     help.changelog = document.getElementById(HTML_ID.help.changelog);
+    help.update_header = document.getElementById(HTML_ID.help.update_header);
     help.versions = [];
-    for (let i = 1; i <= CURRENT_VERSION; ++i) {
+    for (let i = 0; i <= CURRENT_VERSION; i++) {
         help.versions.push(document.getElementById(HTML_ID.help.versions + i));
     }
 
