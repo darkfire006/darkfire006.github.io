@@ -44,6 +44,7 @@ function connectToServer(event) {
 
         if ("decoupled" in response && response["decoupled"] == 1) {
             decoupled = true;
+            html.archipelago.archipelago_decoupled.checked = true;
         }
         
         if ("Entrance Rando" in response) {
@@ -111,7 +112,8 @@ function disconnectFromServer() {
     document.getElementById("status-connected").classList.add("default-hidden");
     document.getElementById("status-failed").classList.add("default-hidden");
     document.getElementById("submit-button").value = "Connect";
-
+    html.archipelago.archipelago_decoupled.checked = false;
+    
     entrance_pairs = {};
     decoupled = false;
     client.socket.disconnect();

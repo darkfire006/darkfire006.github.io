@@ -327,15 +327,32 @@ function OnMouseUp(event) {
                                 case STATE_LINK1: {
                                     // If user clicked same warp we will change location
                                     if (current_location == link_location && info.target == link_warp) {
-                                        current_state = STATE_DEFAULT;
-                                        let w = game.warps[current_location][info.target];
-                                        if (w.link_type && w.link_type == LINKTYPE_WARP) {
-                                            current_location = w.link_location;
-                                            RerenderLayer(LAYER_LOCATION);
-                                            highlight = { location: w.link_location, warps: [w.link] };
-                                            RerenderLayer(LAYER_HIGHLIGHT);
+                                        if (html.config.decoupled_mode.checked || html.archipelago.archipelago_decoupled.checked) {
+                                            for (let location in game.warps) {
+                                                for (let name in game.warps[location]) {
+                                                    let w = game.warps[location][name];
+                                                    if (w && w.link && w.link == link_warp && w.link_type && w.link_type == LINKTYPE_WARP) {
+                                                        current_state = STATE_DEFAULT;
+                                                        current_location = location;
+                                                        RerenderLayer(LAYER_LOCATION);
+                                                        highlight = { location: current_location, warps: [name] };
+                                                        RerenderLayer(LAYER_HIGHLIGHT);
+                                                        break;
+                                                    }
+                                                }
+                                            }
+                                            break;
+                                        } else {
+                                            current_state = STATE_DEFAULT;
+                                            let w = game.warps[current_location][info.target];
+                                            if (w.link_type && w.link_type == LINKTYPE_WARP) {
+                                                current_location = w.link_location;
+                                                RerenderLayer(LAYER_LOCATION);
+                                                highlight = { location: w.link_location, warps: [w.link] };
+                                                RerenderLayer(LAYER_HIGHLIGHT);
+                                            }
+                                            break;
                                         }
-                                        break;
                                     }
                                 } // falldown
                                 case STATE_LINK2: {
@@ -355,7 +372,7 @@ function OnMouseUp(event) {
                                         }
     
                                         ChangeWarp(game, link_location,    link_warp,   LINKTYPE_WARP, current_location, info.target, modifier);
-                                        if (!html.config.decoupled_mode.checked) {
+                                        if (!html.config.decoupled_mode.checked && !html.archipelago.archipelago_decoupled.checked) {
                                             ChangeWarp(game, current_location, info.target, LINKTYPE_WARP, link_location,    link_warp,   modifier);
                                         }
                                     }

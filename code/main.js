@@ -151,6 +151,7 @@ const HTML_ID = {
         map_switching: "checkbox_map_switching",
         show_port: "checkbox_show_port",
         show_password: "checkbox_show_password",
+        archipelago_decoupled: "archipelago_decoupled",
     },
     canvas: "canvas", // + context
 };
@@ -217,6 +218,8 @@ function RetrieveAllHTMLElements() {
     ap_window.show_password.checked = (localStorage.getItem(CACHE.SHOW_PASSWORD) == "true") ? true : false;
     ap_window.port.type = ap_window.show_port.checked ? "text" : "password";
     ap_window.password.type = ap_window.show_password.checked ? "text" : "password";
+    ap_window.archipelago_decoupled = document.getElementById(HTML_ID.archipelago.archipelago_decoupled);
+    ap_window.archipelago_decoupled.checked = false;
     // Retrieve help window elements
     let help    = html.help;
     help.window    = document.getElementById(HTML_ID.help.window);
