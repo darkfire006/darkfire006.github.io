@@ -55,6 +55,14 @@ function connectToServer(event) {
             for (const ent in response["Entrance Rando"]) {
                 keys.push(`Slot:${slot}:${ent}`);
             }
+            if (decoupled) {
+                for (let i = 1; i < 9; i++) {
+                    let key = `Slot:${slot}:Shop, Previous Region ${i}_`
+                    if (!keys.includes(key)) {
+                        keys.push(key);
+                    }
+                }
+            }
             datastorage.fetch(keys).then((response) => {
                 for (const key in response) {
                     if (response[key]) {
@@ -122,14 +130,31 @@ form.addEventListener("submit", connectToServer);
 
 function updateWarpFromDataStorage(key) {
     let split = key.split(":");
-    if (split.length == 3) {
-        let entrance = split[2];
-        if (entrance in entrance_pairs && entrance in archipelago_converted_entrances) {
-            let to = tunic_converted_entrances[archipelago_converted_entrances[entrance_pairs[entrance]]];
-            let from = tunic_converted_entrances[archipelago_converted_entrances[entrance]];
-            ChangeWarp(tunic, from[1], from[0], "warp", to[1], to[0], "");
-            if (!decoupled) {
-                ChangeWarp(tunic, to[1], to[0], "warp", from[1], from[0], "");
+    try {
+        if (split.length == 3) {
+            let entrance = split[2];
+            if (decoupled && entrance.includes("Shop, Previous Region")) {
+                entrance = entrance.replace("Previous Region ", "");
+            }
+            if (entrance in entrance_pairs && entrance in archipelago_converted_entrances) {
+                let to;
+                if (entrance_pairs[entrance] == "Shop, Previous Region_" && shop_count <= 8) {
+                    to = tunic_converted_entrances[archipelago_converted_entrances[`Shop, ${shop_count}_`]];
+                    shop_count++;
+                } else {
+                    to = tunic_converted_entrances[archipelago_converted_entrances[entrance_pairs[entrance]]];
+                }
+                let from = tunic_converted_entrances[archipelago_converted_entrances[entrance]];
+                if (to !== undefined && from !== undefined) {
+                    ChangeWarp(tunic, from[1], from[0], "warp", to[1], to[0], "");
+                    if (!decoupled) {
+                        ChangeWarp(tunic, to[1], to[0], "warp", from[1], from[0], "");
+                    }
+                } else {
+                    console.error("one side is undefined here, warp cannot be matched")
+                    console.error("to: ", to);
+                    console.error("from", from);
+                }
             }
         }
     }
