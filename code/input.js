@@ -327,7 +327,8 @@ function OnMouseUp(event) {
                                 case STATE_LINK1: {
                                     // If user clicked same warp we will change location
                                     if (current_location == link_location && info.target == link_warp) {
-                                        if (html.config.decoupled_mode.checked || html.archipelago.archipelago_decoupled.checked) {
+                                        // for decoupled, highlight the warp that leads to the clicked location if ctrl or shift is held
+                                        if (event.ctrlKey || event.shiftKey) {
                                             for (let location in game.warps) {
                                                 for (let name in game.warps[location]) {
                                                     let w = game.warps[location][name];
