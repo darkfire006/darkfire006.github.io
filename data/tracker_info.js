@@ -2,7 +2,7 @@
 let ordered_games = [
     rb,
     rb_simple,
-    rb_decoupled
+    rb_decoupled,
     crystal,
     crystalg,
     emerald,
