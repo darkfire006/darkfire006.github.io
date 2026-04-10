@@ -7,10 +7,10 @@ let crystal = {
     font_size: "22px",
 
 	// Config texts
-	config_name: "Crystal",
-	config_randomizer_author: "iFatRain",
-	config_randomizer_link: "https://github.com/iFatRain/pokemon-crystal-map-randomizer",
-	//config_tracker_author: "", 
+	config_name: "Crystal AP",
+	config_randomizer_author: "gerbiljames",
+	config_randomizer_link: "https://github.com/gerbiljames/Archipelago/releases/latest",
+	config_tracker_author: "darkfire", 
 	//config_tracker_link: "",
 
 	// Tracker information

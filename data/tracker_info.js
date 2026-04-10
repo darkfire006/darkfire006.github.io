@@ -4,7 +4,6 @@ let ordered_games = [
     rb_simple,
     rb_decoupled,
     crystal,
-    crystalg,
     emerald,
     frlg_nosevii,
     frlg,
@@ -16,7 +15,6 @@ let ordered_games = [
     white2_pc,
     white2_a,
     gen3crossover,
-    crystal_fir,
     emerald_ex
 ];
 
