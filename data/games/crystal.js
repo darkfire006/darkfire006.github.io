@@ -115,8 +115,7 @@ let crystal = {
 			center:        {x: 506, y: 368                                                          },
 			trade:         {x: 345, y: 442                                                          },
 			gate:          {x: 572, y: 441                                                          },
-			center_door:   {x: 543, y: 217, corridor: "center_stairs", name: "Violet City (Center)" },
-			center_stairs: {x: 483, y: 164, corridor: "center_door",   name: "Violet City (Center)" },
+			center_door:   {x: 543, y: 217, corridor: "center_door", name: "Violet City (Center)" },
         },
         azalea_well: {
             kurt:      {x: 151, y: 54                                                    },
@@ -147,8 +146,7 @@ let crystal = {
 			mart:       {x: 392, y: 412 },
 			bike:       {x: 477, y: 500 },
 
-			center_stairs: {x: 15, y: 545, corridor: "center_doors",  name: "Goldenrod (Center)", text_offset: {x: .4, y: 0} },
-			center_door:   {x: 94, y: 593, corridor: "center_stairs", name: "Goldenrod (Center)", text_offset: {x: .4, y: 0} },
+			center_door:   {x: 74, y: 560, corridor: "center_door", name: "Goldenrod (Center)", text_offset: {x: .4, y: 0} },
         },
         ecruteak: {
 			burned:    {x: 106, y: 34  },
@@ -347,8 +345,9 @@ let crystal = {
 			rightgate:  {x: 312, y: 335,                         name: "Route 32 (Violet)"   },
 			center:     {x: 529, y: 249,                         name: "Route 32"            },
 			union:      {x: 443, y: 408,                         name: "Route 32"            },
-			rod_stairs: {x: 501, y: 511, corridor: "rod_door",   name: "Old Rod PokéCenter"  },
-			rod_door:   {x: 564, y: 543, corridor: "rod_stairs", name: "Old Rod PokéCenter"  },
+			iso_left:	{x: 40,	 y: 230, corridor: "iso_right",	 name: "Ruins of Alph (Grass)"  },
+			iso_right:	{x: 104, y: 260, corridor: "iso_left", 	 name: "Ruins of Alph (Grass)"  },
+			rod_door:   {x: 564, y: 543, corridor: "rod_door", name: "Old Rod PokéCenter"  },
         },
         r34_ilex: {
 			r34_gate:    {x: 138, y: 420,                        name: "Route 34"        },
@@ -708,6 +707,14 @@ let crystal = {
 			f5_el:		{x: 332,	y: 176, name: "Celadon Store" },
 			f6_down:	{x: 520,	y: -5,  name: "Celadon Store" },
 			f6_el:		{x: 332,	y: 40,  name: "Celadon Store" },
+        },
+        celadonelevator: {
+			cds_el_1f:	{x: 48,		y: 72, name: "Celadon Elevator (1F)" },
+			cds_el_2f:	{x: 144,	y: 72, name: "Celadon Elevator (2F)" },
+			cds_el_3f:	{x: 48,		y: 168, name: "Celadon Elevator (3F)" },
+			cds_el_4f:	{x: 144,	y: 168, name: "CEladon Elevator (4F)" },
+			cds_el_5f:	{x: 48,		y: 264, name: "CEladon Elevator (5F)" },
+			cds_el_6f:	{x: 144,	y: 264, name: "CEladon Elevator (6F)" },
         },
 		rocktunnel: {
 			f1_entry_door:   {x: 231, y: 23,  corridor: "f1_entry_stairs", name: "Rock Tunnel (Entry)"  },
