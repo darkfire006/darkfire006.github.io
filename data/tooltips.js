@@ -52,12 +52,12 @@ const tooltips = {
 	
 	boulder_badge:	"Boulder Badge\n(Kanto Flash)",
 	cascade_badge:	"Cascade Badge\n(Kanto Cut)",
-	thunder_badge:	undefined
-	rainbow_badge:	undefined
+	//thunder_badge:	undefined
+	//rainbow_badge:	undefined
 	soul_badge:		"Soul Badge\n(Kanto Surf)",
-	marsh_badge:	undefined,
-	volcano_badge:	undefined,
-	earth_badge:	undefined,
+	//marsh_badge:	undefined,
+	//volcano_badge:	undefined,
+	//earth_badge:	undefined,
 	
     c_will:			"Elite 4\nWill",
     c_koga:			"Elite 4\nKoga",
@@ -65,7 +65,7 @@ const tooltips = {
     c_karen:		"Elite 4\nKaren",
     c_elm:			"Professor\nElm's Lab",
     c_oak:			"Professor\nOak's Lab",
-	c_mrpokemon		"Mr. Pokemon's\nHouse",
+	c_mrpokemon:	"Mr. Pokemon's\nHouse",
 	
     c_lance:		"Champion\nLance",
     c_red:			"Red\n(Post-Game)",
