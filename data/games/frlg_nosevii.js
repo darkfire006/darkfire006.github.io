@@ -7,11 +7,11 @@ let frlg_nosevii = {
     font_size: "22px",
 
     // Config texts
-    config_name: "FireRed/LeafGreen (No Sevii Islands)",
-    config_randomizer_author: "Pointcrow",
-    config_randomizer_link: "https://warprandomizer.com/",
-    config_tracker_author: "SaltContainer", 
-    config_tracker_link: "https://saltcontainer.github.io",
+    config_name: "FireRed/LeafGreen AP (No Sevii Islands) - Not worked on yet",
+    config_randomizer_author: "Vyernas",
+    config_randomizer_link: "https://github.com/vyneras/Archipelago/releases/latest",
+	config_tracker_author: "darkfire", 
+	//config_tracker_link: "",
 
     // Tracker information
     locations: {

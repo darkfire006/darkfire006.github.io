@@ -7,11 +7,11 @@ let frlg = {
     font_size: "22px",
 
     // Config texts
-    config_name: "FireRed/LeafGreen (With Sevii Islands)",
-    config_randomizer_author: "",
-    config_randomizer_link: "",
-    config_tracker_author: "SaltContainer", 
-    config_tracker_link: "https://saltcontainer.github.io",
+    config_name: "FireRed/LeafGreen (With Sevii Islands) - WIP",
+    config_randomizer_author: "Vyernas",
+    config_randomizer_link: "https://github.com/vyneras/Archipelago/releases/latest",
+	config_tracker_author: "darkfire", 
+	//config_tracker_link: "",
 
     // Tracker information
     locations: {

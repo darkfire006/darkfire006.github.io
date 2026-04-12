@@ -4,18 +4,18 @@ let ordered_games = [
     rb_simple,
     rb_decoupled,
     crystal,
-    emerald,
+    //emerald,
     frlg_nosevii,
     frlg,
-    platinum,
-    hgss_ad,
-    hgss_pc,
-    black2_ad,
-    white2_ad,
-    white2_pc,
-    white2_a,
-    gen3crossover,
-    emerald_ex
+    //platinum,
+    //hgss_ad,
+    //hgss_pc,
+    //black2_ad,
+    //white2_ad,
+    //white2_pc,
+    //white2_a,
+    //gen3crossover,
+    //emerald_ex
 ];
 
 // Used to name save files
