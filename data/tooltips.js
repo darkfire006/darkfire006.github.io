@@ -31,6 +31,7 @@ const tooltips = {
     c_legendary:	"Lugia\nHo-oh",
     burned_tower:	"Burned\nTower",
 
+	fc_needed:		"Fame Info\nPresent",
 	if_needed:		"Hidden Item\nPresent",
     c_bush:			"Blocked by\nCut",
     c_surf:			"Blocked by\nSurf",
