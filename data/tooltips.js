@@ -151,6 +151,10 @@ const tooltips = {
     frlg_darkness:  "Blocked by\nFlash",
     frlg_rock:      "Blocked by\nRock Smash",
     frlg_waterfall: "Blocked by\nWaterfall",
+	frlg_aide:		"Prof. Oak's\nAides",
+	frlg_bill:		"Bill's House",
+	frlg_celio:		"Pokemon Network\nCenter",
+	frlg_oak:		"Professor\nOak's Lab",
     frlg: {
         masterball: "Top Floor\nSilph Co.",
         boulder_badge: "Boulder Badge\n(Flash)",
