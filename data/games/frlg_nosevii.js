@@ -7,7 +7,7 @@ let frlg_nosevii = {
     font_size: "22px",
 
     // Config texts
-    config_name: "FireRed/LeafGreen AP (No Sevii Islands)",
+    config_name: "FireRed/LeafGreen AP (Kanto Only)",
     config_randomizer_author: "Vyneras",
     config_randomizer_link: "https://github.com/vyneras/Archipelago/releases/latest",
 	config_tracker_author: "darkfire", 
