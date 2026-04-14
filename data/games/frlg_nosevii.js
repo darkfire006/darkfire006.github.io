@@ -8,7 +8,7 @@ let frlg_nosevii = {
 
     // Config texts
     config_name: "FireRed/LeafGreen AP (No Sevii Islands)",
-    config_randomizer_author: "Vyernas",
+    config_randomizer_author: "Vyneras",
     config_randomizer_link: "https://github.com/vyneras/Archipelago/releases/latest",
 	config_tracker_author: "darkfire", 
 	//config_tracker_link: "",
