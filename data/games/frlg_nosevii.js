@@ -7,7 +7,7 @@ let frlg_nosevii = {
     font_size: "22px",
 
     // Config texts
-    config_name: "FireRed/LeafGreen AP (No Sevii Islands) - WIP",
+    config_name: "FireRed/LeafGreen AP (No Sevii Islands)",
     config_randomizer_author: "Vyernas",
     config_randomizer_link: "https://github.com/vyneras/Archipelago/releases/latest",
 	config_tracker_author: "darkfire", 
@@ -78,8 +78,8 @@ let frlg_nosevii = {
             se:                 {x: 878,  y: 457, name: "Celadon City"        },
             r7_underground:     {x: 992,  y: 535, name: "R7 (Celadon)"        },
             r7_gate:            {x: 1100, y: 477, name: "R7 (Celadon)"        },
-            tea_bot:            {x: 1100, y: 271, name: "Celadon (Tea Lady)"  },
-			tea_top:            {x: 1100, y: 67,  name: "Celadon (Tea Lady)"  },
+            tea_bot:            {x: 1100, y: 271, corridor: "tea_top",	name: "Celadon (Tea Lady)"  },
+			tea_top:            {x: 1100, y: 67,  corridor: "tea_bot",	name: "Celadon (Tea Lady)"  },
         },
         cerulean: {
             nw:                 {x: 169,  y: 150, name: "Cerulean City"       },

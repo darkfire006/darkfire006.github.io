@@ -91,8 +91,8 @@ let frlg = {
             se:                 {x: 878,  y: 457, name: "Celadon City"        },
             r7_underground:     {x: 992,  y: 535, name: "R7 (Celadon)"        },
             r7_gate:            {x: 1100, y: 477, name: "R7 (Celadon)"        },
-            tea_bot:            {x: 1100, y: 271, name: "Celadon (Tea Lady)"  },
-			tea_top:            {x: 1100, y: 67,  name: "Celadon (Tea Lady)"  },
+            tea_bot:            {x: 1100, y: 271, corridor: "tea_top",	name: "Celadon (Tea Lady)"  },
+			tea_top:            {x: 1100, y: 67,  corridor: "tea_bot",	name: "Celadon (Tea Lady)"  },
         },
         cerulean: {
             nw:                 {x: 169,  y: 150, name: "Cerulean City"       },
@@ -194,6 +194,7 @@ let frlg = {
             center:             {x: 294,  y: 395 },
             e:                  {x: 379,  y: 470 },
             rocket:             {x: 582,  y: 654 },
+            rocket_inside:      {x: 324,  y: 700,	corridor: "rocket_inside",	name: "Team Rocket Warehouse"	},
         },
         four: {
             harbor:             {x: 166,  y: 452 },
