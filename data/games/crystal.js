@@ -750,7 +750,7 @@ let crystal = {
         [["steel",			0], ["fire",			0], ["water",			0], ["grass",			0], ["electric",		0], ["psychic",			0], ["ice",				0], ["dragon",			0], ["dark",			0]],
         [["1",				0], ["2",				0], ["3",				0], ["4",				0], ["5",				0], ["6",				0], ["7",				0], ["8",				0]],
 		[["bike_needed",	0], ["tea_needed",		0], ["c_train",			0], ["c_boat",			0], ["c_kurt",			0], ["c_daycare",		0], ["dratini",			0], ["burned_tower",	0], ["c_legendary",		0]],
-        [["if_needed",		0], ["c_bush",			0], ["c_surf",			0], ["c_boulder",		0], ["c_darkness",		0], ["c_whirlpool",		0], ["c_waterfall",		0], ["c_rock",			0]],
+        [["if_needed",		0], ["c_bush",			0], ["c_surf",			0], ["c_boulder",		0], ["c_darkness",		0], ["c_whirlpool",		0], ["c_waterfall",		0], ["c_rock",			0], ["c_magikarp",		0]],
     ],
     progress: [
         [["zephyr_badge",	0], ["hive_badge",		0], ["plain_badge",		0], ["fog_badge",		0], ["storm_badge",		0], ["mineral_badge",	0], ["glacier_badge",	0], ["rising_badge",	0]],

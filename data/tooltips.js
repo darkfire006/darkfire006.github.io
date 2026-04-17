@@ -40,7 +40,7 @@ const tooltips = {
     c_whirlpool:	"Blocked by\nWhirlpool",
     c_waterfall:	"Blocked by\nWaterfall",
     c_rock:			"Blocked by\nRock Smash",
-    c_trainer:		"Blocked by\nTrainer Fight",
+    c_magikarp:		"Needs Magikarp",
 
     zephyr_badge:	"Zephyr Badge\n(Johto Flash)",
     hive_badge:		"Hive Badge\n(Johto Cut)",
