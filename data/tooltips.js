@@ -27,6 +27,8 @@ const tooltips = {
 	c_boat:			"S.S. Aqua",
     c_kurt:			"Kurt's\nHouse",
     c_daycare:		"Pokémon\nDay Care Outside",
+	c_mrpkmn:		"Mr. Pokémon's\nHouse",
+    c_bills_grandpa:		"Bill's Grandpa",
     dratini:		"Dragon's\nDen Room",
     c_legendary:	"Lugia\nHo-oh",
     burned_tower:	"Burned\nTower",
