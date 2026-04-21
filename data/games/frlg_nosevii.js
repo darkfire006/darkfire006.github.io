@@ -43,6 +43,7 @@ let frlg_nosevii = {
         mt_moon:          {x: 64,  y: 24,  w: 8,  h: 8,  name: "Mt. Moon\nRoute 4",             link_name: "Mt. Moon"        },
         navel_rock:       {x: 136, y: 112, w: 8,  h: 8,  name: "Navel Rock"                                                  },
         rocket_hideout:   {x: 80,  y: 56,  w: 8,  h: 8,  name: "Rocket Hideout\nGame Corner",   link_name: "Rocket Hideout"  },
+        safari_zone:      {x: 88,  y: 88,  w: 8,  h: 8,  name: "Safari Zone"												 },
         seafoam_islands:  {x: 56,  y: 112, w: 8,  h: 8,  name: "Seafoam Islands\nRoute 20",     link_name: "Seafoam Islands" },
         saffron_gym:      {x: 96,  y: 40,  w: 8,  h: 8,  name: "Saffron Gym",											     },
         //silph_elv:        {x: 96,  y: 56,  w: 8,  h: 8,  name: "Silph Co.\nElevator",           link_name: "Silph Co. (elevator)"       },
