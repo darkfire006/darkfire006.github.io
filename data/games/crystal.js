@@ -77,7 +77,7 @@ let crystal = {
         icepath1:              {x: 115, y: 8,  w: 8, h: 8,  name: "Ice Path\n1F & B1F"             },
         icepath2:              {x: 123, y: 8,  w: 8, h: 8,  name: "Ice Path\nB2F & B3F"            },
         blackthorngym:         {x: 123, y: 16, w: 8, h: 8,  name: "Blackthorn Gym"                 },
-        victoryroad_reception: {x: 155, y: 34, w: 8, h: 14, name: "Victory Road\nLeague Reception" },
+        victoryroad_reception: {x: 155, y: 28, w: 8, h: 20, name: "Victory Road\nLeague Reception\nRoute 23" },
         
         mtmoon_r3_r4:          {x: 211, y: 24, w: 8, h: 8, name: "Mt. Moon\nRoute 3 / 4"           },
         mtsilver:              {x: 131, y: 40, w: 8, h: 8, name: "Mt. Silver"                      },
@@ -669,6 +669,8 @@ let crystal = {
 			reception_left:  {x: 380, y: 420,                         name: "League Reception"  },
 			reception_right: {x: 580, y: 420,                         name: "League Reception"  },
 			reception_top:   {x: 484, y: 364,                         name: "League Reception"  },
+			r23_bot:      	 {x: 820, y: 574, corridor: "r23_top",		name: "Route 23" },
+			r23_top:      	 {x: 720, y: 80, corridor: "r23_bot",		name: "Route 23" },
 			roadf1_bot:      {x: 151, y: 574, corridor: "roadf1_top", name: "Victory Road (1F)" },
 			roadf1_top:      {x: 67,  y: 332, corridor: "roadf1_bot", name: "Victory Road (1F)" },
 			roadf2_left:     {x: 66,  y: 211,                         name: "Victory Road (2F)" },
