@@ -32,6 +32,7 @@ const tooltips = {
     dratini:		"Dragon's\nDen Room",
     c_legendary:	"Lugia\nHo-oh",
     burned_tower:	"Burned\nTower",
+	c_daisy:		"Daisy",
 
 	fc_needed:		"Fame Info\nPresent",
 	if_needed:		"Hidden Item\nPresent",
@@ -66,6 +67,7 @@ const tooltips = {
     c_koga:			"Elite 4\nKoga",
     c_bruno:		"Elite 4\nBruno",
     c_karen:		"Elite 4\nKaren",
+    c_player:		"Player's Room",
     c_elm:			"Professor\nElm's Lab",
     c_oak:			"Professor\nOak's Lab",
 	c_mrpokemon:	"Mr. Pokemon's\nHouse",
