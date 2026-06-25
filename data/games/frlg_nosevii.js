@@ -147,6 +147,7 @@ let frlg_nosevii = {
             _3f_stairs_e:       {x: 394,  y: 290 },
             _5f_stairs_w:       {x: 481,  y: 340 },
             _5f_stairs_e:       {x: 630,  y: 290 },
+            _roof_stairs_e:     {x: 580,  y: 120, corridor: "_roof_stairs_e"},
         },
         fuchsia: {
             r18_gate:           {x: 88,   y: 299, name: "R18 (Fuchsia)"       },
@@ -235,6 +236,8 @@ let frlg_nosevii = {
             power_plant:        {x: 119,  y: 348 },
             power_plant_side:   {x: 40,   y: 292 },
             cave_s:             {x: 133,  y: 574 },
+            plant_top:			{x: 430,  y: 200, corridor: "plant_bot", name: "Power Plant" },
+            plant_bot:			{x: 488,  y: 630, corridor: "plant_top", name: "Power Plant" },
         },
         r12: {
             house:              {x: 215,  y: 200, name: "R12 (Route)"         },
@@ -252,8 +255,10 @@ let frlg_nosevii = {
             p_gate_e:           {x: 307,  y: 654, name: "R2 (Pewter)"         },
             v_gate_w:           {x: 491,  y: 293, name: "R2 (Viridian)"       },
             v_gate_e:           {x: 698,  y: 251, name: "R2 (Viridian)"       },
-            hm_bot:             {x: 582,  y: 146, corridor: "hm_bot", name: "R2 (HM Flash)"       },
-			hm_top:             {x: 582,  y: 47,  corridor: "hm_top", name: "R2 (HM Flash)"       },
+            vf_bot:             {x: 491,  y: 146, corridor: "vf_top", name: "Viridian Forest"       },
+			vf_top:             {x: 491,  y: 47,  corridor: "vf_bot", name: "Viridian Forest"       },
+            hm_bot:             {x: 672,  y: 146, corridor: "hm_bot", name: "R2 (HM Flash)"       },
+			hm_top:             {x: 672,  y: 47,  corridor: "hm_top", name: "R2 (HM Flash)"       },
         },
         r23: {
             top: {x: 96, y: 554,  corridor: "bot" },
@@ -548,7 +553,7 @@ let frlg_nosevii = {
         [["frlg_aide",		0], ["frlg_celio",		0], ["frlg_bill",		0], ["frlg_oak",		0], ["",     undefined], ["",     undefined], ["",      undefined], ["",     undefined]],
         [["hm_cut",			0], ["hm_fly",			0], ["hm_surf",			0], ["hm_strength",		0], ["hm_flash",   0], ["hm_rocksmash", 0], ["hm_waterfall",  0], ["",     undefined]],
         [["bike_voucher",	0], ["bike",			0], ["berry_pouch",		0], ["parcel",			0], ["poke_flute", 0], ["tea",          0], ["silph_scope",   0], ["gold_teeth",   0]],
-        [["card_key",		0], ["lift_key",		0], ["secret_key",		0], ["fossil",			0], ["ss_ticket",    0]],
+        [["card_key",		0], ["lift_key",		0], ["secret_key",		0], ["fossil",			0], ["ss_ticket",    0], ["town_map",	0], ["coin_case",		0]],
     ],
 
     modifiers: [

@@ -174,7 +174,7 @@ const tooltips = {
         card_key:   "Silph Co.\nCard Key",
         lift_key:   "Rocket's Hideout\nLift Key",
         secret_key: "Blaine's Gym\nSecret Key",
-	
+		town_map: "Town Map",
 
     },
 	/* RB */
