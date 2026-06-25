@@ -25,6 +25,7 @@ const tooltips = {
 	tea_needed:		"Blocked by Tea.",
     c_train:		"Magnet\nTrain",
 	c_boat:			"S.S. Aqua",
+	c_moo:			"Moo-Moo Farm",
     c_kurt:			"Kurt's\nHouse",
     c_daycare:		"Pokémon\nDay Care Outside",
 	c_mrpkmn:		"Mr. Pokémon's\nHouse",
