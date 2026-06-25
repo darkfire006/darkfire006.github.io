@@ -816,7 +816,7 @@ let crystal = {
         [["fighting",		0], ["flying",			0], ["poison",			0], ["ground",			0], ["rock",			0], ["bug",				0], ["ghost",			0], ["steel",			0]],
         [["fire",			0], ["water",			0], ["grass",			0], ["electric",		0], ["psychic",			0], ["ice",				0], ["dragon",			0], ["dark",			0]],
         [["1",				0], ["2",				0], ["3",				0], ["4",				0], ["5",				0], ["6",				0], ["7",				0], ["8",				0]],
-		[["if_needed",		0], ["bike_needed",		0], ["tea_needed",		0], ["c_train",			0], ["c_boat",			0]],
+		[["if_needed",		0], ["bike_needed",		0], ["tea_needed",		0], ["c_moo",			0], ["c_train",			0], ["c_boat",			0]],
         [["c_bush",			0], ["c_surf",			0], ["c_boulder",		0], ["c_darkness",		0], ["c_whirlpool",		0], ["c_waterfall",		0], ["c_rock",			0], ["trade",			0]],
 		[["c_magikarp",		0], ["c_bills_grandpa",	0], ["c_daisy",			0], ["c_kurt",			0], ["c_daycare",		0], ["dratini",			0], ["burned_tower",	0], ["c_legendary",		0]]
     ],
