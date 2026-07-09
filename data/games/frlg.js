@@ -166,6 +166,8 @@ let frlg = {
             a_landing:          {x: 120,  y: 107, name: "Dotted Hole A"       },
             a_entrance:         {x: 103,  y: 162, name: "Dotted Hole A"       },
             a_ladder:           {x: 216,  y: 65,  name: "Dotted Hole A"       },
+            f_landing:          {x: 328,  y: 123, name: "Dotted Hole F"       },
+            f_ladder:           {x: 440,  y: 123, name: "Dotted Hole F"       },
             b_n:                {x: 103,  y: 193, name: "Dotted Hole B"       },
             b_w:                {x: 24,   y: 257, name: "Dotted Hole B"       },
             b_e:                {x: 184,  y: 299, name: "Dotted Hole B"       },
