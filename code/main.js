@@ -47,22 +47,22 @@ function init() {
     RetrieveAllHTMLElements();
     if (DEBUG.ENABLED) { RunTests(); }
 
+    // Show explanation + changelog if we haven't shown it before
     let last_version = localStorage.getItem(CACHE.LAST_VERSION);
     if (!last_version) { // New user
-        html.help.update_header.classList.remove("config_hidden");
-        for (let i = 0; i < CURRENT_VERSION; i++) {
+        ShowHelp();
+        html.help.changelog.classList.add("config_hidden");
+        for (let i = 1; i < CURRENT_VERSION; ++i) {
             html.help.versions[i].classList.add("config_hidden");
         }
-        ShowHelp();
     }
     if (last_version && last_version < CURRENT_VERSION) { // Show last changes
-        html.help.update_header.classList.remove("config_hidden");
-       for (let i = 0; i <= last_version; i++) {
-           html.help.versions[i].classList.add("config_hidden");
-       }
-       ShowHelp();
-    }
-    localStorage.setItem(CACHE.LAST_VERSION, CURRENT_VERSION);
+        for (let i = 0; i < last_version; ++i) {
+            html.help.versions[i].classList.add("config_hidden");
+        }
+
+        ShowHelp();
+    }    localStorage.setItem(CACHE.LAST_VERSION, CURRENT_VERSION);
 
     // Get last loaded game and load it
     let last_game = localStorage.getItem(CACHE.GAME_LOADED);
