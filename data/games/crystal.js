@@ -425,15 +425,16 @@ let crystal = {
 			bot: {x: 231, y: 710, corridor: "top"},
         },
         r9_r10: {
-			rocktunnel: {x: 136, y: 66,  name: "Route 9"          },
-			center:     {x: 187, y: 141, name: "Route 9"          },
-			powerplant: {x: 62,  y: 267, name: "Route 10 (Plant)" },
+			rocktunnel: {x: 136, y: 66,  							name: "Route 9"          },
+			center:     {x: 187, y: 141, 							name: "Route 9"          },
+			powerplant: {x: 62,  y: 267, 							name: "Route 10 (Plant)" },
+			pplant:		{x: 256, y: 376, corridor: "pplant",	name: "Power Plant" },
         },
 		r28: {
 			gate:   {x: 456, y: 375 },
 			house:  {x: 70,  y: 405 },
-			center: {x: 325, y: 175, name: "Mt. Silver Exterior" },
-			silver: {x: 244, y: 43, name: "Mt. Silver Exterior"   },
+			center: {x: 325, y: 175,	name: "Mt. Silver Exterior" },
+			silver: {x: 244, y: 43,		name: "Mt. Silver Exterior"   },
 		},
 
         // Important locations
