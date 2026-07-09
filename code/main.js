@@ -24,7 +24,7 @@ const CACHE = {
     SHOW_PASSWORD:     "show-password",
     DECOUPLED_MODE:     "decoupled-mode",
 }
-const CURRENT_VERSION = 2;
+const CURRENT_VERSION = 7;
 
 let game;
 let games = {};
@@ -138,7 +138,7 @@ const HTML_ID = {
     },
     help: {
         window: "help_window",
-        changelog: "changelog_header",
+        changelog: "sekiis_changelog_header",
         update_header: "update_header",
         versions: "help_v" // this is an array of size == CURRENT_VERSION
     },
