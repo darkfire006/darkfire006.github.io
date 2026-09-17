@@ -79,6 +79,7 @@ const tooltips = {
     c_rival:		"Silver\n(Rival)",
 	c_rockets:		"Team Rocket",
     c_unown_goal:	"Unown\nRoom",
+	c_battle_tower:	"Battle Tower",
 	
     hm_cut:			"HM 01\n(Cut)",
     hm_fly:			"HM 02\n(Fly)",
