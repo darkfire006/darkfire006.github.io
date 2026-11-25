@@ -55,6 +55,36 @@ function FileUploaded(event) {
 
 function SaveFile() {
     let text = "";
+	
+	if (!game.ready) { return; }
+	
+	text += "#" + game.name + ",";
+	for (let p of game.obtained) {
+		text += p + ",";
+	}
+	text = text.substring(0, text.length-1);
+	text += "\n";
+	
+	if (!game.ready) { return; }
+
+	text += WarpsToText(game);
+
+
+    if (text.length == 0) {
+        alert("There's nothing to save.");
+        return;
+    }
+
+    let time = new Date();
+    let d = time.getFullYear() + "-" + (time.getMonth()+1) + "-" + time.getDate() + "_" + time.getHours() + "." + time.getMinutes() + "." + time.getSeconds();
+    let a = document.createElement("a");
+    a.href = window.URL.createObjectURL(new Blob([text], {type: "text/plain"}));
+    a.download = d + "_" + TRACKER_NAME + "_" + game.name + ".txt";
+    a.click();
+}
+
+function SaveFiles() {
+    let text = "";
     for (let key_game in games) {
         if (!games[key_game].ready) { continue; }
         
